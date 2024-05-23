@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks();
 string connectionString = Environment.GetEnvironmentVariable("MONGO_CONNECTION_STRING");
 
+
 if (string.IsNullOrEmpty(connectionString))
 {
     Console.WriteLine("La variable de entorno no está configurada.");

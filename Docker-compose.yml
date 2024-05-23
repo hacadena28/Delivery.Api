@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  microservice:
+    build: ./
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+    hostname: management
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MONGO_CONNECTION_STRING=mongodb://dubancsierra:4eLNFkI9TFCLgYzP@mongodb:27017/test?directConnection=true&authSource=admin&appName=mongosh+2.1.5
+    networks:
+      - public
+  mongo:
+    image: mongo
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dubancsierra
+      - MONGO_INITDB_ROOT_PASSWORD=4eLNFkI9TFCLgYzP
+      - MONGO_INITDB_DATABASE=Cluster0
+    volumes:
+      - ./mongo_data/:/data/db
+    networks:
+      - public
+    ports: 
+      - 27017:27017
+networks:
+  public:

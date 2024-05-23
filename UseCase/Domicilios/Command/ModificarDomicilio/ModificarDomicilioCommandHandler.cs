@@ -19,8 +19,10 @@ public class ModificarDomicilioCommandHandler : IRequestHandler<ModificarDomicil
         var domicilios = await _domicilioRepository.GetAllAsync();
 
         var domicilio = domicilios.FirstOrDefault(x => x.Id == request.Id);
-
-        domicilio.Estado = request.Estado;
+        domicilio!.IdRepartidor=request.IdRepartidor;
+        domicilio!.Estado = request.Estado;
+        if(request.Estado == "entregado")
+            domicilio.FechaFinal = DateTime.UtcNow;
         await _domicilioRepository.UpdateAsync(request.Id, domicilio);
         return Unit.Value;
     }
