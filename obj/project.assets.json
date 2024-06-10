@@ -1545,19 +1545,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {}
+    "C:\\Users\\caden\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Documents\\Cloud\\Delivery.Api\\Delivery.Api.csproj",
+      "projectUniqueName": "C:\\Delivery.Api\\Delivery.Api.csproj",
       "projectName": "Delivery.Api",
-      "projectPath": "C:\\Users\\PC\\Documents\\Cloud\\Delivery.Api\\Delivery.Api.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Documents\\Cloud\\Delivery.Api\\obj\\",
+      "projectPath": "C:\\Delivery.Api\\Delivery.Api.csproj",
+      "packagesPath": "C:\\Users\\caden\\.nuget\\packages\\",
+      "outputPath": "C:\\Delivery.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\caden\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1577,11 +1577,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {

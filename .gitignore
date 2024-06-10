@@ -1,3 +1,7 @@
 mongo_data
 .obj/*
 .vs/*
+.obj
+.bin
+.idea
+
