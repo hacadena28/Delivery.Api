@@ -6,8 +6,9 @@ namespace Delivery.Api.Entity;
 public class Domicilio : BaseEntity<string>
 {
     public Domicilio(string requestNombre, string requestDireccionOrigen, string requestDireccionDestino,
-        double requestPrecio, string requestIdEmpresa, string requestFecha, string requestEstado, DateTime fechaInicial, DateTime? fechaFinal
-        , string idRepartidor, string descripcion)
+        double requestPrecio, string requestIdEmpresa, string requestFecha, string requestEstado, DateTime fechaInicial,
+        DateTime? fechaFinal
+        , string idRepartidor, string descripcion, string correoUsuario)
     {
         Nombre = requestNombre;
         DireccionOrigen = requestDireccionOrigen;
@@ -20,6 +21,7 @@ public class Domicilio : BaseEntity<string>
         FechaFinal = fechaFinal;
         IdRepartidor = idRepartidor;
         Descripcion = descripcion;
+        CorreoUsuario = correoUsuario;
     }
 
 
@@ -34,4 +36,5 @@ public class Domicilio : BaseEntity<string>
     public DateTime? FechaFinal { get; set; }
     public string IdRepartidor { get; set; }
     public string Descripcion { get; set; }
+    public string CorreoUsuario { get; set; }
 }

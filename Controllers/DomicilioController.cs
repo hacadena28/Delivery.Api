@@ -6,6 +6,7 @@ using Delivery.Api.UseCase.Domicilios.Command.FinalizarDomicilio;
 using Delivery.Api.UseCase.Domicilios.Command.ModificarDomicilio;
 using Delivery.Api.UseCase.Domicilios.Command.RechazarDomicilio;
 using Delivery.Api.UseCase.Domicilios.Query.ConsultarDomicilio;
+using Delivery.Api.UseCase.Domicilios.Query.ConsultarDomicilioPorCorreo;
 using Delivery.Api.UseCase.Domicilios.Query.ConsultarDomicilioPorId;
 using Delivery.Api.UseCase.Empresas.Command.CrearEmpresa;
 using Delivery.Api.UseCase.Empresas.Query.ConsultarEmpresas;
@@ -59,8 +60,14 @@ public class DomicilioControllers : BaseController
     }
 
     [HttpGet("Domicilio/obtener/{id}")]
-    public async Task<ActionResult<Domicilio>> ObtenerDomicilio(string id)
+    public async Task<ActionResult<Domicilio>> ObtenerDomicilioPorId(string id)
     {
         return await Mediator.Send(new ConsultarDomicilioPorIdQuery(id));
+    }
+
+    [HttpGet("Domicilio/correo/obtener/{correo}")]
+    public async Task<ActionResult<IEnumerable<Domicilio>>> ObtenerDomicilioPorCorreo(string correo)
+    {
+        return await Mediator.Send(new ConsultarDomicilioPorCorreoQuery(correo));
     }
 }

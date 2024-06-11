@@ -10,4 +10,5 @@ public record CrearDomicilioCommand(
     double Precio,
     string IdEmpresa,
     string Fecha,
-    string Descripcion) : IRequest<Unit>;
+    string Descripcion,
+    string CorreoUsuario) : IRequest<Unit>;

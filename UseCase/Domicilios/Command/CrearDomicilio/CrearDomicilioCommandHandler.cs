@@ -17,7 +17,8 @@ public class CrearDomicilioCommandHandler : IRequestHandler<CrearDomicilioComman
     public async Task<Unit> Handle(CrearDomicilioCommand request, CancellationToken cancellationToken)
     {
         Domicilio domicilio = new(request.Nombre, request.DireccionOrigen, request.DireccionDestino, request.Precio,
-            request.IdEmpresa, request.Fecha, DeliveryState.EnEspera, DateTime.UtcNow, null, null, request.Descripcion);
+            request.IdEmpresa, request.Fecha, DeliveryState.EnEspera, DateTime.UtcNow, null, null, request.Descripcion,
+            request.CorreoUsuario);
 
         await _domicilioRepository.InsertAsync(domicilio);
         return Unit.Value;

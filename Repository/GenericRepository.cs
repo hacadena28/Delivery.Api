@@ -26,6 +26,7 @@ public class GenericRepository<T> where T : BaseEntity<string>
         var filter = Builders<T>.Filter.Eq(e => e.Id, id);
         return await _collection.Find(filter).FirstOrDefaultAsync();
     }
+    
 
     public async Task<List<T>> GetAllAsync()
     {
